@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.feiliming.com/2016/10/29/GitHub-Pages-Hexo/index.html">
 <meta property="og:site_name" content="Feiliming's Website">
 <meta property="og:description" content="基于Hexo静态站点生成工具，生成静态博客，使用Markdown语法编写文章，然后发布到GitHub Pages，可以外网独立域名访问，开源、免费、无限制。">
-<meta property="og:updated_time" content="2016-11-01T09:14:41.574Z">
+<meta property="og:updated_time" content="2016-12-09T02:38:20.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于GitHub Pages + Hexo搭建静态博客">
 <meta name="twitter:description" content="基于Hexo静态站点生成工具，生成静态博客，使用Markdown语法编写文章，然后发布到GitHub Pages，可以外网独立域名访问，开源、免费、无限制。">
@@ -313,7 +313,7 @@
 <blockquote>
 <p>如果下载慢指定淘宝镜像，<code>--registry = http://registry.npm.taobao.org</code>。</p>
 </blockquote>
-<h3 id="3-Git版本控制系统"><a href="#3-Git版本控制系统" class="headerlink" title="3.Git版本控制系统"></a>3.Git版本控制系统</h3><p><a href="https://git-scm.com/" target="_blank" rel="external">Git</a>，一个开源免费的分布式版本控制系统。<br>本文使用的是 <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a>。 其他更多<a href="https://git-scm.com/downloads/guis" target="_blank" rel="external">GUI Clients</a>。</p>
+<h3 id="3-Git版本控制系统"><a href="#3-Git版本控制系统" class="headerlink" title="3.Git版本控制系统"></a>3.Git版本控制系统</h3><p><a href="https://git-scm.com/" target="_blank" rel="external">Git</a>，一个开源免费的分布式版本控制系统。<br>本文使用的是 <a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a> , <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a>。 其他更多<a href="https://git-scm.com/downloads/guis" target="_blank" rel="external">GUI Clients</a>。</p>
 <blockquote>
 <p>注意，别跟GitHub混淆，GitHub是一个项目托管平台，它的版本控制是基于Git实现的。</p>
 </blockquote>
@@ -324,7 +324,7 @@
 <h3 id="5-Hexo"><a href="#5-Hexo" class="headerlink" title="5.Hexo"></a>5.Hexo</h3><p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是一个快速、简单且功能强大的静态站点生成框架。Hexo使用Markdown（或其他渲染引擎）解析文章，还以安装很多的第三方插件。</p>
 <h2 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法/步骤"></a>方法/步骤</h2><h3 id="1-安装Node-js-npm"><a href="#1-安装Node-js-npm" class="headerlink" title="1.安装Node.js + npm"></a>1.安装Node.js + npm</h3><p>下载最新的<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a>，本文使用的是v6.2.0，一路下一步安装，安装Node.js时会自带npm，自带的版本是3.8.9。</p>
 <p>如果你安装的Node.js是稳定版v4.4.5，自带的npm版本是v2.15.5，建议升级到最新版本，<code>npm update npm -g</code>。</p>
-<h3 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h3><p>安装 <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a>。</p>
+<h3 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h3><p>安装 <a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a>。<br>安装 <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a>。</p>
 <h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><ul>
 <li>打开Git Bash，全局安装hexo-cli<br><code>npm install -g hexo-cli</code></li>
 <li>切换到工作目录，本文是F盘的gh_blog<br><code>cd f:/gh_blog</code></li>
@@ -423,6 +423,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/12/09/db-structure-design-of-sign-in/" rel="prev" title="签到数据结构设计">
+                签到数据结构设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -493,17 +497,24 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
