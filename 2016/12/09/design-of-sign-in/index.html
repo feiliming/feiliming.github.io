@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.feiliming.com/2016/12/09/design-of-sign-in/index.html">
 <meta property="og:site_name" content="Feiliming's Website">
 <meta property="og:description" content="签到实现方案设计。签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
-<meta property="og:updated_time" content="2016-12-09T09:04:16.603Z">
+<meta property="og:updated_time" content="2016-12-09T09:05:45.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="签到实现方案设计">
 <meta name="twitter:description" content="签到实现方案设计。签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
@@ -334,8 +334,7 @@
 <p>4.根据阈值进行签到<br>last_time = 当前日期<br>total_count++ 签到总次数加1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//数据存在update</div><div class="line">if(已经连续签到次数 &gt;= 阈值)&#123;</div><div class="line">    continuous_count = 0 连续签到次数清零</div><div class="line">&#125;else if(连续)&#123;</div><div class="line">    continuous_count++ 连续签到次数加1</div><div class="line">&#125;else&#123;</div><div class="line">    continuous_count = 0 连续签到次数清零</div><div class="line">&#125;</div><div class="line">//数据不存在insert</div><div class="line">continuous_count = 1 连续签到次数为1</div></pre></td></tr></table></figure></p>
 <p>5.判断是否连续<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(当前日期 == 上次签到日期 + 1)&#123;</div><div class="line">    连续</div><div class="line">&#125;else&#123;</div><div class="line">    不连续</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>6.如果签到则插入明细</p>
-<p>##接口设计</p>
-<p>1.根据用户ID获取当前日期签到情况<br>参数：<code>person_id</code><br>返回值：<br><code>is_sign: 1表示当前日期已签，0表示未签</code><br><code>continuous_count： 已经连续签到次数</code><br><code>total_count： 签到总次数</code></p>
+<h2 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h2><p>1.根据用户ID获取当前日期签到情况<br>参数：<code>person_id</code><br>返回值：<br><code>is_sign: 1表示当前日期已签，0表示未签</code><br><code>continuous_count： 已经连续签到次数</code><br><code>total_count： 签到总次数</code></p>
 <p>2.根据用户ID签到<br>参数：<code>person_id</code><br>返回值：<br><code>success: true表示成功，同时返回以下参数，否则只返回false</code><br><code>is_sign: 1表示当前日期已签，0表示未签</code><br><code>continuous_count： 已经连续签到次数</code><br><code>total_count： 签到总次数</code></p>
 
       
@@ -494,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表结构"><span class="nav-number">2.</span> <span class="nav-text">表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">3.</span> <span class="nav-text">算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表结构"><span class="nav-number">2.</span> <span class="nav-text">表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">3.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口设计"><span class="nav-number">4.</span> <span class="nav-text">接口设计</span></a></li></ol></div>
             
           </div>
         </section>
