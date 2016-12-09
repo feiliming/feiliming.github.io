@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="签到,数据结构设计," />
+  <meta name="keywords" content="签到,实现方案设计," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="签到数据结构设计，签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
+<meta name="description" content="签到实现方案设计。签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="签到数据结构设计">
-<meta property="og:url" content="http://www.feiliming.com/2016/12/09/db-structure-design-of-sign-in/index.html">
+<meta property="og:title" content="签到实现方案设计">
+<meta property="og:url" content="http://www.feiliming.com/2016/12/09/design-of-sign-in/index.html">
 <meta property="og:site_name" content="Feiliming's Website">
-<meta property="og:description" content="签到数据结构设计，签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
-<meta property="og:updated_time" content="2016-12-09T02:36:19.382Z">
+<meta property="og:description" content="签到实现方案设计。签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
+<meta property="og:updated_time" content="2016-12-09T08:48:22.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="签到数据结构设计">
-<meta name="twitter:description" content="签到数据结构设计，签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
+<meta name="twitter:title" content="签到实现方案设计">
+<meta name="twitter:description" content="签到实现方案设计。签到功能的目的是什么？怎么达到目的？目的是增加用户黏性，激励用户成就感，同时会使用积分、抽奖等方式奖励用户成就感。">
 
 
 
@@ -114,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://www.feiliming.com/2016/12/09/db-structure-design-of-sign-in/"/>
+  <link rel="canonical" href="http://www.feiliming.com/2016/12/09/design-of-sign-in/"/>
 
 
-  <title> 签到数据结构设计 | Feiliming's Website </title>
+  <title> 签到实现方案设计 | Feiliming's Website </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +257,7 @@
             
             
               
-                签到数据结构设计
+                签到实现方案设计
               
             
           </h1>
@@ -283,8 +283,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构设计/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构设计</span>
+                  <a href="/categories/实现方案设计/" itemprop="url" rel="index">
+                    <span itemprop="name">实现方案设计</span>
                   </a>
                 </span>
 
@@ -299,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/09/db-structure-design-of-sign-in/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/09/db-structure-design-of-sign-in/" itemprop="commentsCount"></span>
+                <a href="/2016/12/09/design-of-sign-in/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/09/design-of-sign-in/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,8 +328,14 @@
 </blockquote>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>1.用户每天签到一次，不能重复<br>2.记录连续签到次数，可以有一个阈值，达到阈值后从0开始<br>3.签到没有连续，则从0开始<br>4.可以查看签到明细</p>
 <p>ps：不用考虑积分奖励，那是积分系统的事</p>
-<h2 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h2><p>1.签到表<br>| 项目        | 价格   |  数量  |<br>| ——–   | —–:  | :—-:  |<br>| 计算机     | \$1600 |   5     |<br>| 手机        |   \$12   |   12   |<br>| 管线        |    \$1    |  234  |</p>
-<p>2.签到明细表</p>
+<h2 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h2><p>1.签到表<br>id int(11) 主键<br>person_id int(11) 用户ID<br>last_time datetime 上次签到日期<br>continuous_count int(11) 已经连续签到次数<br>total_count int(11) 签到总次数</p>
+<p>2.签到明细表<br>id int(11) 主键<br>person_id int(11) 用户ID<br>sign_time datetime 签到日期</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>1.接收用户ID<br>2.获取服务器当前日期<br>3.根据用户ID和服务器当前日期判断该用户今天是否签到过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if(数据存在)&#123;</div><div class="line">    if(当前日期 &gt; 上次签到日期)&#123;</div><div class="line">        可签到</div><div class="line">    &#125;else if(当前日期 == 上次签到日期)&#123;</div><div class="line">        return 今天已签，禁止再次签到</div><div class="line">    &#125;</div><div class="line">&#125;else&#123;</div><div class="line">    可签到</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.根据阈值进行签到<br>last_time = 当前日期<br>total_count++ 签到总次数加1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//数据存在update</div><div class="line">if(已经连续签到次数 &gt;= 阈值)&#123;</div><div class="line">    continuous_count = 0 连续签到次数清零</div><div class="line">&#125;else&#123;</div><div class="line">    continuous_count++ 连续签到次数加1</div><div class="line">&#125;</div><div class="line">//数据不存在insert</div><div class="line">continuous_count = 1 连续签到次数为1</div></pre></td></tr></table></figure></p>
+<p>5.如果签到则插入明细</p>
+<p>##接口设计</p>
+<p>1.根据用户ID获取当前日期签到情况<br>参数：<code>person_id</code><br>返回值：<br><code>is_sign: 1表示当前日期已签，0表示未签</code><br><code>continuous_count： 已经连续签到次数</code><br><code>total_count： 签到总次数</code></p>
+<p>2.根据用户ID签到<br>参数：<code>person_id</code><br>返回值：<br><code>success: true表示成功，同时返回以下参数，否则只返回false</code><br><code>is_sign: 1表示当前日期已签，0表示未签</code><br><code>continuous_count： 已经连续签到次数</code><br><code>total_count： 签到总次数</code></p>
 
       
     </div>
@@ -354,7 +360,7 @@
           
             <a href="/tags/签到/" rel="tag">#签到</a>
           
-            <a href="/tags/数据结构设计/" rel="tag">#数据结构设计</a>
+            <a href="/tags/实现方案设计/" rel="tag">#实现方案设计</a>
           
         </div>
       
@@ -395,8 +401,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/09/db-structure-design-of-sign-in/"
-           data-title="签到数据结构设计" data-url="http://www.feiliming.com/2016/12/09/db-structure-design-of-sign-in/">
+      <div class="ds-thread" data-thread-key="2016/12/09/design-of-sign-in/"
+           data-title="签到实现方案设计" data-url="http://www.feiliming.com/2016/12/09/design-of-sign-in/">
       </div>
     
   </div>
@@ -487,7 +493,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表结构"><span class="nav-number">2.</span> <span class="nav-text">表结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表结构"><span class="nav-number">2.</span> <span class="nav-text">表结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">3.</span> <span class="nav-text">算法</span></a></li></ol></div>
             
           </div>
         </section>
