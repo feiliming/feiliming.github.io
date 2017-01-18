@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.feiliming.com/2016/10/29/GitHub-Pages-Hexo/index.html">
 <meta property="og:site_name" content="Feiliming's Website">
 <meta property="og:description" content="基于Hexo静态站点生成工具，生成静态博客，使用Markdown语法编写文章，然后发布到GitHub Pages，可以外网独立域名访问，开源、免费、无限制。">
-<meta property="og:updated_time" content="2017-01-17T09:18:10.013Z">
+<meta property="og:updated_time" content="2017-01-18T00:34:21.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于GitHub Pages + Hexo搭建静态博客">
 <meta name="twitter:description" content="基于Hexo静态站点生成工具，生成静态博客，使用Markdown语法编写文章，然后发布到GitHub Pages，可以外网独立域名访问，开源、免费、无限制。">
@@ -294,7 +294,7 @@
 
           
               &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+              <span class="page-pv">本文总阅读量
               <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
               </span>
           
@@ -395,7 +395,7 @@
 <h3 id="20-绑定自己的域名"><a href="#20-绑定自己的域名" class="headerlink" title="20.绑定自己的域名"></a>20.绑定自己的域名</h3><p>首先去阿里云买一个自己喜欢的域名，阿里已经把万网收购了<br>然后添加域名解析设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">记录类型    主机记录     解析线路    记录值</div><div class="line">A           @            默认        ping yourusername.github.io后的ip</div><div class="line">CNAME       www          默认        yourusername.github.io</div></pre></td></tr></table></figure></p>
 <p>然后在source目录创建CNAME文件，内容为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">www.feiliming.com</div></pre></td></tr></table></figure></p>
 <h3 id="21-上传到GitHub后vendors下文件404"><a href="#21-上传到GitHub后vendors下文件404" class="headerlink" title="21.上传到GitHub后vendors下文件404"></a>21.上传到GitHub后vendors下文件404</h3><p>Next主题上传到GitHub后vendors下文件404，其他主题无问题<br>Next主题作者说是GitHub pages屏蔽了vendors目录，解决办法是：<br>方法1是在repo根目录下创建.nojekyll文件，内容是空的即可<br>方法2是将主题目录下vendors文件改名，然后将主题配置_configl.yml中的vendors-》_internal改成对应文件名</p>
-<h3 id="22-添加访问统计"><a href="#22-添加访问统计" class="headerlink" title="22.添加访问统计"></a>22.添加访问统计</h3><p><a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="external">hexo第三方集成服务</a></p>
+<h3 id="22-添加访问统计"><a href="#22-添加访问统计" class="headerlink" title="22.添加访问统计"></a>22.添加访问统计</h3><p><a href="http://theme-next.iissnan.com/third-party-services.html" target="_blank" rel="external">hexo第三方集成服务</a><br>本文使用<a href="http://busuanzi.ibruce.info/" target="_blank" rel="external">不蒜子</a><br>修改主题目录下配置文件_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">busuanzi_count:</div><div class="line">  # count values only if the other configs are false</div><div class="line">  enable: true</div><div class="line">  # custom uv span for the whole site</div><div class="line">  site_uv: true</div><div class="line">  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt; 本站总访客数&lt;/i&gt;</div><div class="line">  site_uv_footer: 人</div><div class="line">  # custom pv span for the whole site</div><div class="line">  site_pv: true</div><div class="line">  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt; 本站总访问量&lt;/i&gt;</div><div class="line">  site_pv_footer: 次</div><div class="line">  # custom pv span for one page only</div><div class="line">  page_pv: true</div><div class="line">  page_pv_header: 本文总阅读量</div><div class="line">  page_pv_footer: 次</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -601,11 +601,11 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv"><i class="fa fa-user">本站总访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
+    <span class="site-uv"><i class="fa fa-user"> 本站总访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
   
 
   
-    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+    <span class="site-pv"><i class="fa fa-eye"> 本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
   
   
 </div>
