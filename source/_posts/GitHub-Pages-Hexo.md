@@ -266,3 +266,48 @@ busuanzi_count:
 # JiaThis 分享服务
 jiathis: true
 ```
+
+### 24.更换电脑怎么办？
+将hexo源文件和hexo g生成的静态文件分别上传到两个分支上，
+hexo源文件上传到hexo分支，静态文件上传到master分支。
+```
+#克隆项目到本地
+git clone --recursive <repo addr> /f/gh_blog/ghb2
+#切换到/f/gh_blog/ghb2目录
+cd /f/gh_blog/ghb2
+#创建分支
+git branch hexo
+#切换分支
+git checkout hexo
+#删除分支下文件
+git rm * -r
+#将以下源文件拷贝到ghb2目录下
+/scaffolds
+/source
+/themes //注意将next主题目录下的.git文件删除
+.gitignore
+_config.yml
+package.json
+#add所有文件到暂存区
+git add .
+#commit到本地仓库
+git commit -m "hexo source"
+#提交到远程
+git push origin hexo
+```
+以后写文章的操作要切换到master上，修改源文件配置的要切换到hexo分支并提交。
+
+### 25.插入本地图片
+1.修改根目录_config.yml
+```
+post_asset_folder: true
+```
+2.安装插件
+```
+npm install hexo-asset-image --save
+```
+3.再次使用hexo n xxx生成md时，同时会生成一个xxx文件夹，把md引用的图片放到这个文件夹
+4.md中引用方式
+```
+![](xxx/图片名.png)
+```
