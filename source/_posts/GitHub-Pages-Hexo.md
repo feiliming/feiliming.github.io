@@ -276,7 +276,7 @@ git clone --recursive <repo addr> /f/gh_blog/ghb2
 #切换到/f/gh_blog/ghb2目录
 cd /f/gh_blog/ghb2
 
-不用下面这么麻烦，直接检出分支也可
+不用下面这么麻烦，直接检出远程分支也可
 git checkout hexo
 
 #创建分支
