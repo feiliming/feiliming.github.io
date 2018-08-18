@@ -275,6 +275,10 @@ hexo源文件上传到hexo分支，静态文件上传到master分支。
 git clone --recursive <repo addr> /f/gh_blog/ghb2
 #切换到/f/gh_blog/ghb2目录
 cd /f/gh_blog/ghb2
+
+不用下面这么麻烦，直接检出分支也可
+git checkout hexo
+
 #创建分支
 git branch hexo
 #切换分支
